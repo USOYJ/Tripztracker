@@ -2,17 +2,12 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-function Signup() {
+function Login() {
     return (
         <Form>
             <Form.Group className="mb-3" controlId="formBasicUsername">
                 <Form.Label>Username</Form.Label>
                 <Form.Control type="username" placeholder="Username" />
-            </Form.Group>
-
-            <Form.Group className='mb-3' controlId='formBasicEmail'>
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type='email' placeholder='Enter email' />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -27,4 +22,4 @@ function Signup() {
     );
 }
 
-export default Signup;
+export default Login;
