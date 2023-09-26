@@ -20,6 +20,7 @@ function HomePage() {
         <div className="text-center">
           {" "}
           <h1 className="home-title mt-4 mb-3">Welcome to Trip Tracker!</h1>
+          <Button>test button</Button>
         </div>
       </>
     );
