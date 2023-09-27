@@ -1,43 +1,21 @@
-const { Profile } = require('../models');
+const { Destination } = require('../models');
 
 const resolvers = {
   Query: {
-    profiles: async () => {
-      return Profile.find();
+    destinations: async () => {
+      return Destination.find();
     },
 
-    profile: async (parent, { profileId }) => {
-      return Profile.findOne({ _id: profileId });
+    destination: async (parent, { destinationId }) => {
+      return Destination.findOne({ _id: destinationId });
     },
   },
   // Important for useMutation: The resolver matches the typeDefs entry point and informs the request of the relevant data
   Mutation: {
-    addProfile: async (parent, { name }) => {
-      return Profile.create({ name });
+    addDestination: async (parent, { destination}) => {
+      return Destination.create({destination });
     },
-    addSkill: async (parent, { profileId, skill }) => {
-      return Profile.findOneAndUpdate(
-        { _id: profileId },
-        {
-          $addToSet: { skills: skill },
-        },
-        {
-          new: true,
-          runValidators: true,
-        }
-      );
-    },
-    removeProfile: async (parent, { profileId }) => {
-      return Profile.findOneAndDelete({ _id: profileId });
-    },
-    removeSkill: async (parent, { profileId, skill }) => {
-      return Profile.findOneAndUpdate(
-        { _id: profileId },
-        { $pull: { skills: skill } },
-        { new: true }
-      );
-    },
-  },
+  },  
 };
 
 module.exports = resolvers;

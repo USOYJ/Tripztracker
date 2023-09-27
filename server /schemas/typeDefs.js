@@ -1,21 +1,17 @@
 const typeDefs = `
-  type Profile {
+  type Destination {
     _id: ID
-    name: String
-    skills: [String]!
+    destination: String
   }
 
   type Query {
-    profiles: [Profile]!
-    profile(profileId: ID!): Profile
+    destinations: [Destination]!
+    destination(destinationId: ID!): Destination
   }
   
   # Important for useMutation: We define our Mutation type to inform our entrypoints
   type Mutation {
-    addProfile(name: String!): Profile
-    addSkill(profileId: ID!, skill: String!): Profile
-    removeProfile(profileId: ID!): Profile
-    removeSkill(profileId: ID!, skill: String!): Profile
+    addDestination(destination: String!): Destination
   }
 `;
 
