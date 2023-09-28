@@ -1,4 +1,4 @@
-const db = require('../config/connection');
+const db = require('../../Tripztracker/server/config/connection');
 const { Destination } = require('../models');
 const destinationSeeds = require('./destinationSeeds.json');
 const cleanDB = require('./cleanDB');
