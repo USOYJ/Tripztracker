@@ -7,6 +7,16 @@ const destinationSchema = new Schema({
     required: true,
     trim: true,
   },
+  comments: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Comment',
+    },
+  ],
+  time: {
+    type: Date,
+    default: Date.now,
+  },  
 });
 
 const Destination = model('Destination', destinationSchema);
