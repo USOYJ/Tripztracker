@@ -1,3 +1,5 @@
+const User = require('./user');
 const Destination = require('./destination');
 
-module.exports = { Destination };
+module.exports = { User, Destination };
+

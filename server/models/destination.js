@@ -2,21 +2,18 @@ const { Schema, model } = require('mongoose');
 
 const destinationSchema = new Schema({
  
-  destination: {
+  location: {
+    type: String,
+    required: 'Pick a trip Location!',
+    minlength: 1,
+    maxlength: 280,
+    trim: true,
+  },
+  departure: {
     type: String,
     required: true,
     trim: true,
   },
-  comments: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Comment',
-    },
-  ],
-  time: {
-    type: Date,
-    default: Date.now,
-  },  
 });
 
 const Destination = model('Destination', destinationSchema);
