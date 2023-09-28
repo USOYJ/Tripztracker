@@ -17,11 +17,11 @@ const server = new ApolloServer({
 const startApolloServer = async () => {
   await server.start();
 
-  app.use(cors()); // Enable CORS for your server
+  app.use(cors()); 
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
 
-  // Serve the client build in production
+ 
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/dist')));
 
@@ -30,26 +30,26 @@ const startApolloServer = async () => {
     });
   }
 
-  // Define your GraphQL endpoint and apply middleware
+
   server.applyMiddleware({ app, path: '/graphql' });
 
-  // Connect to MongoDB
-  mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/your-database', {
+
+  mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/tripztracker', {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useFindAndModify: false,
   });
 
-  // Create Destination model
+
   const Destination = require('./models/destination');
 
-  // Define routes for destinations
+
   app.get('/destination', async (req, res) => {
     try {
       const destinations = await Destination.find();
       res.json(destinations);
     } catch (error) {
-      console.error(error); // Log the error
+      console.error(error); 
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
@@ -59,7 +59,7 @@ const startApolloServer = async () => {
       const destination = await Destination.create(req.body);
       res.status(201).json(destination);
     } catch (error) {
-      console.error(error); // Log the error
+      console.error(error); 
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
@@ -78,7 +78,7 @@ const startApolloServer = async () => {
 
       res.json(updatedDestination);
     } catch (error) {
-      console.error(error); // Log the error
+      console.error(error); 
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
