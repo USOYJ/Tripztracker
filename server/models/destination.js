@@ -2,14 +2,14 @@ const { Schema, model } = require('mongoose');
 
 const destinationSchema = new Schema({
  
-  location: {
+  presentLocation: {
     type: String,
     required: 'Pick a trip Location!',
     minlength: 1,
     maxlength: 280,
     trim: true,
   },
-  departure: {
+  destination: {
     type: String,
     required: true,
     trim: true,

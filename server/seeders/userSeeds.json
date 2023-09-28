@@ -1,0 +1,17 @@
+[
+  {
+    "username": "colin22",
+    "password": "!colin22",
+    "email": "mooncolin@pmail.com",
+    "destinations": [
+      {
+        "presentLocation": "Paris",
+        "destination": "Italy"
+},
+      {
+        "presentLocation": "New York",
+        "destination": "Venice"
+      }
+    ]
+  }
+]

@@ -1,13 +1,13 @@
-const db = require('../../Tripztracker/server/config/connection');
-const { Destination } = require('../models');
-const destinationSeeds = require('./destinationSeeds.json');
+const db = require('../config/connection');
+const { User } = require('../models');
+const userSeeds = require('./userSeeds.json');
 const cleanDB = require('./cleanDB');
 
 db.once('open', async () => {
   try {
-    await cleanDB('Destination', 'destinations');
+    await cleanDB('User', 'users');
     
-    await Destination.create(destinationSeeds);
+    await User.create(userSeeds);
 
     console.log('all done!');
     process.exit(0);

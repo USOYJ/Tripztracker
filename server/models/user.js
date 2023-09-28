@@ -19,11 +19,21 @@ const userSchema = new Schema({
     required: true,
     minlength: 8,
   },
-  destination: [
+  destinations: [
     {
-      type: Schema.Types.ObjectId,
-      ref: 'Destination',
+    presentLocation: {
+      type: String,
+      required: 'Pick a trip Location!',
+      minlength: 1,
+      maxlength: 280,
+      trim: true,
     },
+    destination: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+  },
   ],
 });
 
