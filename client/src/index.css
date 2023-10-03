@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Homepage */
+body {
+  justify-content: center;
+  height: 100vh;
+  background-color: black !important;
+  background: linear-gradient(to top, purple, #000000);
+}
+
+.home-title {
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #f9faf9;
+}
+
+.nav {
+  border: solid !important;
+  border-radius: 10px;
+}
+
+.nav-text {
+  color: #fafbfa !important;
+  font-weight: bold;
+}
+
+.navbar-center {
+  position: absolute;
+  left: 43.5%;
+  object-fit: cover;
+}
+
+.AlignCenter {
+  align-items: center;
+}
+
+/* forms */
+.login {
+  padding-left: 16%;
+}
+
+.title {
+  text-align: center;
+  padding-right: 20%;
+  font-weight: bold;
+}
+
+.input-field {
+  background-color: rgba(250, 88, 226, 0) !important;
+}
+
+.button {
+  background-color: rgba(164, 11, 185, 0.4) !important;
+  border-color: rgb(0, 7, 5) !important;
+}
+
+.button:hover {
+  background-color: #93056b !important;
+}
+
+.button:active {
+  background-color: #f9f1f7 !important;
+}
+
+input {
+  color: #faf6f8 !important;
+}
+
+.card {
+  background: linear-gradient(to bottom, #195c44, #000000);
+  box-shadow: 0 30px 16px -10px rgb(16, 17, 16);
+  border-radius: 10px !important;
+  border: 0px !important;
+}
+
+.card-text {
+  color: #cfddd3 !important;
+}
+
+.link {
+  color: #cfddd3 !important;
+  border-color: rgba(25, 92, 68, 1) !important;
+}
+
+.link:hover {
+  color: #154e3a !important;
+}
+
+.link:active {
+  color: #cfddd3 !important;
+}

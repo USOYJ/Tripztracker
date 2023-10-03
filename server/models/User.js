@@ -19,24 +19,14 @@ const userSchema = new Schema({
     required: true,
     minlength: 8,
   },
-  destinations: [
+  thoughts: [
     {
-    presentLocation: {
-      type: String,
-      required: 'Pick a trip Location!',
-      minlength: 1,
-      maxlength: 280,
-      trim: true,
+      type: Schema.Types.ObjectId,
+      ref: 'Thought',
     },
-    destination: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-  },
   ],
 });
-
+// synchronous hashing; avoids hashing the password if it hasn't been modified
 userSchema.pre('save', function (next) {
   if (this.isModified('password')) {
     const saltRounds = 10;
@@ -44,7 +34,7 @@ userSchema.pre('save', function (next) {
   }
   next();
 });
-
+// synchronus password comparison
 userSchema.methods.isCorrectPassword = function (password) {
   return bcrypt.compareSync(password, this.password);
 };
